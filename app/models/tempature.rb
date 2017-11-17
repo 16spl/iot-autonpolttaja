@@ -1,0 +1,2 @@
+class Tempature < ApplicationRecord
+end
