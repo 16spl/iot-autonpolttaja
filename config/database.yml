@@ -22,7 +22,7 @@ test:
 
 production:
   adapter: mysql2
-  database: Ilmoitustaulu
-  username: ilmoitustaulu
+  database: rails
+  username: rails
   host: localhost
   password: <%=IO.read(File.expand_path('~/.db')) rescue ''%>
