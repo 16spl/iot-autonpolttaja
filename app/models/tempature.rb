@@ -2,7 +2,7 @@ class Tempature < ApplicationRecord
   def self.to_csv
     temp = Tempature.find_by_sql(
       %{
-        Select * FROM tempatures WHERE id%13 = 0 ORDER BY created_at DESC LIMIT 10000
+        Select * FROM tempatures WHERE id%15 = 0 ORDER BY created_at DESC LIMIT 10000
       }
     )
     csv = ""
