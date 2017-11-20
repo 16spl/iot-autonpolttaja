@@ -1,0 +1,11 @@
+<div id="graph" style="width: 60%"></div>
+<script>
+  new Dygraph(document.getElementById("graph"),
+  "<%= get_csv_path %>",
+  {
+  rollPeriod: 10,
+  title: "Sää Oulussa"
+  }
+
+  )
+</script>
