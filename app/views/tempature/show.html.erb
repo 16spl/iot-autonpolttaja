@@ -11,7 +11,7 @@
 </script>
 
 <%= form_for temp_path, method: :get do |f| %>
-  <%= f.label :days %>
+  <%= f.label :days, "Päivät: " %>
   <%= text_field_tag :days, params[:days] %>
-  <%= f.submit 'vaihda', name: nil%>
+  <%= f.submit 'Päivitä', name: nil%>
 <% end %>

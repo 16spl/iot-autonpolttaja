@@ -1,7 +1,7 @@
 class TempatureController < ApplicationController
   def show
     @temp = Tempature.order("id").last
-    @days = params[:days]
+    @days = params[:days] ||= 7
   end
 
   def csv_temp
