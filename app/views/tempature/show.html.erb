@@ -1,7 +1,7 @@
 <div id="graph" style="width: 60%"></div>
 <script>
   new Dygraph(document.getElementById("graph"),
-  "<%= get_csv_path %>",
+  "<%= get_csv_path(days: @days) %>",
   {
   rollPeriod: 10,
   title: "IoT-Autonpolttaja"
@@ -9,3 +9,9 @@
 
   )
 </script>
+
+<%= form_for temp_path, method: :get do |f| %>
+  <%= f.label :days %>
+  <%= text_field_tag :days, params[:days] %>
+  <%= f.submit 'vaihda', name: nil%>
+<% end %>
