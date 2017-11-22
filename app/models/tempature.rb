@@ -6,8 +6,7 @@ class Tempature < ApplicationRecord
       days = 7
     end
     temp = Tempature.find_by_sql(
-    ["Select * FROM tempatures WHERE id%15 = 0 AND created_at > ? ORDER BY created_at DESC LIMIT 10000", Time.now - days.days]
-    )
+    ["Select * FROM tempatures WHERE created_at > ? ORDER BY created_at DESC LIMIT 10000", Time.now - days.days])
     csv = ""
     csv << "time,temp\n"
     temp.each do |temp|
