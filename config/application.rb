@@ -1,5 +1,4 @@
 require_relative 'boot'
-require 'csv'
 require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
@@ -8,16 +7,13 @@ Bundler.require(*Rails.groups)
 
 module IotAutonpolttaja
   class Application < Rails::Application
-    # Initialize configuration defaults for originally generated Rails version.
+      # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
     config.active_job.queue_adapter = :sidekiq
-    # Settings in config/environments/* take precedence over those specified here.
-    # Application configuration should go into files in config/initializers
-    # -- all .rb files in that directory are automatically loaded.
-    config.after_initialize do
-    config.time_zone = 'Europe/Helsinki'
+      # Settings in config/environments/* take precedence over those specified here.
+      # Application configuration should go into files in config/initializers
+      # -- all .rb files in that directory are automatically loaded.
+    config.time_zone = "Helsinki"
     config.active_record.default_timezone = :local
-
-    end
   end
 end
