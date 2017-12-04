@@ -1,0 +1,10 @@
+<%= form_for @heater, :method => :post do |f| %>
+  <p>
+    <%= f.label :owner %>
+    <%= f.text_field :owner %>
+  </p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  <p>
+    <%= f.submit 'Luo uus' %>
+  <% end %>

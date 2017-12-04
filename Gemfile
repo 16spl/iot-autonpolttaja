@@ -21,6 +21,8 @@ gem 'mqtt'
 
 gem 'mysql2'
 
+gem 'active_model_serializers'
+
 gem 'sidekiq'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
