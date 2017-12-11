@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171130105037) do
+ActiveRecord::Schema.define(version: 20171211124811) do
+
+  create_table "heater_commands", force: :cascade do |t|
+    t.string "command", null: false
+    t.datetime "heating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "heater_id"
+    t.boolean "seen", null: false
+    t.index ["heater_id"], name: "index_heater_commands_on_heater_id"
+  end
 
   create_table "heater_statuses", force: :cascade do |t|
     t.float "tempature"

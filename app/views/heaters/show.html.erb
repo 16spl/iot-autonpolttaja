@@ -17,7 +17,7 @@
       Luotu
     </th>
   </tr>
-  <% @heater.heater_statuses.each do |h| %>
+  <% @heater.heater_statuses.order(created_at: :asc).each do |h| %>
     <tr>
       <td>
         <%= h.tempature %>
@@ -34,3 +34,5 @@
     </tr>
   <% end %>
 </table>
+
+<%= render 'heater_commands/show', heater_command: @heater.heater_commands %>
