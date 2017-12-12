@@ -24,6 +24,6 @@ class Api::V1::HeaterCommandsController < Api::V1::BaseController
 
   private
     def command_params
-      params.require(:heater_command).permit(:heating, :command, :seen)
+      params.permit(:seen)
     end
 end
