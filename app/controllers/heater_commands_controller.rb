@@ -22,6 +22,6 @@ class HeaterCommandsController < ApplicationController
 
   private
     def heater_command_params
-      params.require(:heater_command).permit(:seen, :command, :heating)
+      params.permit(:seen)
     end
 end
