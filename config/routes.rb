@@ -5,13 +5,14 @@ Rails.application.routes.draw do
 
   resources :heaters do
     resources :heater_statuses
-    resources :heater_commands
+    resources :heater_commands, only: [:show, :create, :new]
   end
 
   namespace :api do
     namespace :v1 do
       resources :heaters, only: [:create, :show] do
         resources :heater_statuses, only: [:create]
+        resources :heater_commands, only: [:show, :index, :update]
       end
     end
   end

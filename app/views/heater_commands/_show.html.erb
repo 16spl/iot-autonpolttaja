@@ -14,7 +14,7 @@
     Luotu
   </th>
 </tr>
-<% heater_command.order(created_at: :asc).each do |h| %>
+<% heater_command.order(created_at: :desc).each do |h| %>
   <tr>
     <td>
       <%= h.seen %>
@@ -31,4 +31,3 @@
   </tr>
 <% end %>
 </table>
-<%= heater_command.status_list %>
