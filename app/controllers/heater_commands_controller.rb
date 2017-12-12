@@ -14,7 +14,7 @@ class HeaterCommandsController < ApplicationController
     if @command.valid?
       @command.save
       flash.now[:success] = "Lähetetty"
-      render 'heaters/show'
+      redirect_to @heater
     else
       render 'heaters/show'
     end
