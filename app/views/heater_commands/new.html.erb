@@ -1,10 +1,10 @@
 <%= form_for [@heater, @command] do |f|%>
   <p>
-    <%= f.label :command %>
+    <%= f.label :command, "Komento" %>
     <%= f.collection_select :command, HeaterCommand.status_list, :to_s, :to_s, include_blank: false %>
   </p>
   <p>
-    <%= f.label :heating %>
+    <%= f.label :heating, "Lämmitysaika" %>
     <%= f.text_field :heating %>
   </p>
   <%= f.submit "Lähetä"%>

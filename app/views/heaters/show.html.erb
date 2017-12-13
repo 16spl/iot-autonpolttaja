@@ -1,7 +1,9 @@
   <%= @heater.owner %></br>
   <%= @heater.name %>
+<h1>IoT-Autonpolttaja</h1>
+<%= render template: "heater_commands/new", command: @heater.heater_commands %>
 
-  <h1> Status log:</h1>
+  <h3> Status log:</h3>
 <table>
   <tr>
     <th>
@@ -20,7 +22,7 @@
       Toiminto
     </th>
   </tr>
-  <% @heater.heater_statuses.order(created_at: :asc).each do |h| %>
+  <% @heater.heater_statuses.order(created_at: :desc).each do |h| %>
     <tr>
       <td>
         <%= h.tempature %>
