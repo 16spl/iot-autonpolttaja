@@ -16,8 +16,15 @@ class HeaterCommandsController < ApplicationController
       flash.now[:success] = "Lähetetty"
       redirect_to @heater
     else
-      render 'heaters/show'
+      redirect_to heater_path(params[:heater_id])
     end
+  end
+
+  def destroy
+    @heater = Heater.find(params[:heater_id])
+    @command = @heater.heater_commands.find(params[:id])
+    @command.destroy
+    redirect_to heater_path(params[:heater_id])
   end
 
   private

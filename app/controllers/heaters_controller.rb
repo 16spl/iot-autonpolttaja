@@ -10,7 +10,6 @@ class HeatersController < ApplicationController
   def show
     @heater = Heater.find(params[:id])
     @command = HeaterCommand.new
-
   end
 
   def create

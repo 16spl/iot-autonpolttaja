@@ -16,6 +16,9 @@
     <th>
       Luotu
     </th>
+    <th>
+      Toiminto
+    </th>
   </tr>
   <% @heater.heater_statuses.order(created_at: :asc).each do |h| %>
     <tr>
@@ -30,6 +33,9 @@
       </td>
       <td>
         <%= time_ago_in_words(h.created_at) %>
+      </td>
+      <td>
+        <%= link_to 'Poista', heater_heater_status_path(@heater,h), method: :delete %>
       </td>
     </tr>
   <% end %>
